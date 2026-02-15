@@ -331,16 +331,16 @@ apellido-nombre-proyecto/
 ### README de Entrega
 
 ```markdown
-# Ficha de [Tu Dominio] - [Tu Nombre]
+# Ficha de [13] - [tienda de ropa infantil]
 
 ## 📋 Información
 - **Nombre**: [Tu nombre completo]
-- **Fecha**: [DD/MM/YYYY]
-- **Dominio Asignado**: [Tu dominio]
-- **Entidad Principal**: [Qué representa tu ficha]
+- **Fecha**: [13/02/2026]
+- **Dominio Asignado**: [tienda de ropa inftantil]
+- **Entidad Principal**: [E-comerce y retail]
 
 ## 🎯 Descripción
-[Breve descripción de lo que muestra tu ficha]
+[Tienda especializada en ropa infantil cómoda, moderna y de alta calidad para bebés y niños.]
 
 ## 📚 Conceptos ES2023 Aplicados
 - [ ] Variables con let/const
