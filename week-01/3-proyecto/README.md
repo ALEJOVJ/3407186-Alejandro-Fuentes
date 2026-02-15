@@ -334,7 +334,7 @@ apellido-nombre-proyecto/
 # Ficha de [13] - [tienda de ropa infantil]
 
 ## 📋 Información
-- **Nombre**: [Tu nombre completo]
+- **Nombre**: [ALEJANDRO FUENTES CASTILLO]
 - **Fecha**: [13/02/2026]
 - **Dominio Asignado**: [tienda de ropa inftantil]
 - **Entidad Principal**: [E-comerce y retail]
