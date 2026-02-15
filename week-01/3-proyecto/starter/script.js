@@ -85,7 +85,7 @@ const renderItems = (showAll = false) => {
 
   const itemsHtml = itemsToShow.map(item => {
     const { name, level } = item;
-    return 
+    return `
       <div class="item">
         <div class="item-name">${name}</div>
         <div class="item-level">
@@ -95,7 +95,7 @@ const renderItems = (showAll = false) => {
           </div>
         </div>
       </div>
-    ;
+    `;
   }).join('');
 
   itemsList.innerHTML = itemsHtml;
