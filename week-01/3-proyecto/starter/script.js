@@ -20,7 +20,7 @@ const entityData = {
   ],
 
   links: [
-    { platform: "Instagram", url: "https://instagram.com", icon: "📸" },
+    { platform: "Instagram", url: "https://www.instagram.com/bibiw_ear?igsh=dDV4bWE0a2NzeWhj", icon: "📸" },
     { platform: "Facebook", url: "https://facebook.com", icon: "📘" },
     { platform: "WhatsApp", url: "https://wa.me/573001234567", icon: "💬" }
   ],
