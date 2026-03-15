@@ -21,26 +21,26 @@
 // ============================================
 
 // TODO: Define el nombre de tu dominio
-const DOMAIN_NAME = "Mi Dominio";
+const DOMAIN_NAME = "tienda de ropa infantil";
 
 // TODO: Define el nombre de la entidad principal
 // Inclúyelo con espacios y mayúsculas/minúsculas
 // para poder aplicar transformaciones después
-const rawEntityName = "  nombre de la entidad  ";
+const rawEntityName = "camiseta de dinosaurio";
 
 // TODO: Define una categoría o tipo (string)
-const entityCategory = "Categoría del elemento";
+const entityCategory = "camisetas para niños";
 
 // TODO: Define un código identificador (string)
 // Elige un prefijo coherente con tu dominio
-const entityCode = "COD-001";
+const entityCode = "CAM-001";
 
 // TODO: Define una descripción corta (string)
 // Debe contener varias palabras para usar includes/slice
-const entityDescription = "Descripción interesante de la entidad del dominio asignado.";
+const entityDescription = "camiseta infantil comoda y con estampado de dinosaurio para niños pequeños.";
 
 // TODO: Define un dato numérico relevante (number)
-const mainValue = 0;
+const mainValue = 35000;
 
 // TODO: Define un estado booleano
 const isActive = true;
@@ -74,7 +74,7 @@ const hasValidPrefix = entityCode.startsWith(codePrefix);
 
 // TODO: Verifica si la descripción contiene una palabra clave
 // Usa includes() con una palabra importante de tu dominio
-const descriptionIsRelevant = entityDescription.includes("dominio");
+const descriptionIsRelevant = entityDescription.includes("infantil");
 
 // TODO: Verifica si el código termina con los dígitos
 // Usa endsWith() con algo coherente de tu dominio
@@ -99,7 +99,7 @@ Categoría:   ${entityCategory}
 Código:      ${entityCode}
 Prefijo:     ${codePrefix}
 Valor:       ${mainValue}
-Estado:      ${isActive ? "Activo" : "Inactivo"}
+Estado:      ${isActive ? "Disponible" : "Agotado"}
 
 ${subSeparator}
 Descripción:
