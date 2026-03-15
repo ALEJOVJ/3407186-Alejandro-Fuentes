@@ -22,8 +22,13 @@
 //   Museo:        ADULT_TICKET = 20_000, GUIDED_TOUR = 15_000
 //   Zoológico:    FOOD_COST_PER_DAY = 500_000, MAX_VISITORS = 800
 //   Observatorio: SESSION_DURATION = 90, TICKET_PRICE = 18_000
+const PRICE_SHIRT = 25000;
+const PRICE_PANTS = 30000;
+const PRICE_JACKET = 45000;
 
 // const EXAMPLE_CONSTANT = 0; // TODO: Reemplazar con tus constantes
+
+const MAX_STOCK = 100;
 
 // ============================================
 // SECCIÓN 2: Operaciones aritméticas
@@ -34,6 +39,10 @@ console.log("=== Operaciones básicas ===");
 // Usa: +, -, *, /, %, **
 // Etiqueta cada resultado con console.log()
 
+const shirtsSold = 15;
+const pantsSold = 10;
+const jacketsSold = 5;
+
 // Ejemplo con dominio Planetario (NO copiar):
 // const ticketPrice = 12_000;
 // const attendees = 38;
@@ -41,6 +50,29 @@ console.log("=== Operaciones básicas ===");
 // console.log("Ingresos función:", totalRevenue);
 // const remainingSeats = 45 - attendees;
 // console.log("Asientos disponibles:", remainingSeats);
+
+// ingresos por producto
+const shirtsRevenue = shirtsSold * PRICE_SHIRT;
+console.log("Ingresos por camisetas:", shirtsRevenue);
+
+const pantsRevenue = pantsSold * PRICE_PANTS;
+console.log("Ingresos por pantalones:", pantsRevenue);
+
+const jacketsRevenue = jacketsSold * PRICE_JACKET;
+console.log("Ingresos por chaquetas:", jacketsRevenue);
+
+// ingreso total
+const totalRevenue = shirtsRevenue + pantsRevenue + jacketsRevenue;
+console.log("Ingreso total del día:", totalRevenue);
+
+// stock restante
+const remainingStock = MAX_STOCK - (shirtsSold + pantsSold + jacketsSold);
+console.log("Stock restante:", remainingStock);
+
+// promedio de ventas
+const averageSale = totalRevenue / 3;
+console.log("Promedio de ventas por producto:", averageSale);
+
 
 console.log("");
 
@@ -61,6 +93,24 @@ console.log("=== Asignación compuesta ===");
 // runningTotal *= 0.90; // descuento del 10%
 // console.log("Con descuento:", runningTotal);
 
+let dailyTotal = 0;
+
+console.log("Total inicial:", dailyTotal);
+
+dailyTotal += shirtsRevenue;
+console.log("Después de camisetas:", dailyTotal);
+
+dailyTotal += pantsRevenue;
+console.log("Después de pantalones:", dailyTotal);
+
+dailyTotal += jacketsRevenue;
+console.log("Después de chaquetas:", dailyTotal);
+
+// descuento del 10%
+dailyTotal *= 0.9;
+console.log("Total con descuento del 10%:", dailyTotal);
+
+
 console.log("");
 
 // ============================================
@@ -78,6 +128,14 @@ console.log("=== Validaciones con === ===");
 // const hasFine = daysLate > 0;
 // console.log("¿Tiene multa?", hasFine);
 
+const minimumGoal = 500000;
+
+const goalReached = totalRevenue >= minimumGoal;
+console.log("¿Se alcanzó la meta de ventas?", goalReached);
+
+const stockEmpty = remainingStock === 0;
+console.log("¿Se acabó el stock?", stockEmpty);
+
 console.log("");
 
 // ============================================
@@ -94,6 +152,23 @@ console.log("=== Condiciones lógicas ===");
 // const qualifiesForDiscount = isMember && purchaseAmount >= 100_000;
 // console.log("¿Descuento aplicable?", qualifiesForDiscount);
 
+const isMember = true;
+const purchaseAmount = totalRevenue;
+
+// descuento si es miembro y compra más de 100000
+const memberDiscount = isMember && purchaseAmount >= 100000;
+console.log("¿Aplica descuento de miembro?", memberDiscount);
+
+// envío gratis si compra mucho o es miembro
+const freeShipping = purchaseAmount >= 200000 || isMember;
+console.log("¿Aplica envío gratis?", freeShipping);
+
+// tienda cerrada
+const storeClosed = false;
+const canBuy = !storeClosed;
+
+console.log("¿Se puede comprar?", canBuy);
+
 console.log("");
 
 // ============================================
@@ -103,5 +178,13 @@ console.log("=== Resumen ===");
 
 // TODO: Muestra un resumen con los valores más importantes
 // calculados en las secciones anteriores
+
+console.log("Camisetas vendidas:", shirtsSold);
+console.log("Pantalones vendidos:", pantsSold);
+console.log("Chaquetas vendidas:", jacketsSold);
+
+console.log("Ingreso total del día:", totalRevenue);
+console.log("Stock restante:", remainingStock);
+console.log("Meta alcanzada:", goalReached);
 
 console.log("");
