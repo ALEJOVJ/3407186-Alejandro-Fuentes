@@ -128,7 +128,7 @@ console.log("--- Valor nulo ---");
 console.log("proveedor asignado:",supplierName);
 console.log("typeof null:",typeof supplierName);
 // TODO: Agrega typeof y la verificación === null
-console.log("¿Es null?:", supplierName === null);
+console.log("¿Es null?:", supplierValue === null);
 console.log("");
 
 
