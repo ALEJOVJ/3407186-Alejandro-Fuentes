@@ -22,23 +22,12 @@
 // SECCIÓN 1: Constantes y datos del dominio
 // ============================================
 
-// TODO: Define las constantes globales de tu dominio
-// Ejemplo: const TAX_RATE = 0.19;
-//          const CURRENCY = "USD";
-//          const DOMAIN_NAME = "Mi Dominio";
 const DOMAIN_NAME = "Tienda de ropa infantil";
-const VALUE_LABEL = "precio"; // Ej: "precio", "cantidad", "duración"
+const VALUE_LABEL = "precio";
+const CURRENCY = "$";
+const TAX_RATE = 0.19;
 
-// TODO: Define un array con al menos 5 elementos de tu dominio.
-// Cada elemento debe ser un objeto con propiedades relevantes.
-// Ejemplo (Biblioteca):
-// const items = [
-//   { id: 1, name: "El Quijote",  category: "clásico",    value: 15,  active: true },
-//   { id: 2, name: "1984",        category: "distopía",   value: 12,  active: true },
-//   ...
-// ];
 const items = [
-  // TODO: Agrega tus elementos aquí
   { id: 1, name: "Camiseta Spider Niño", category: "camisetas", value: 45, active: true },
   { id: 2, name: "Vestido Princesa", category: "vestidos", value: 80, active: true },
   { id: 3, name: "Pantalón Jeans Niño", category: "pantalones", value: 60, active: false },
@@ -50,41 +39,12 @@ const items = [
 // SECCIÓN 2: Función de formato
 // ============================================
 
-// TODO: Implementa una arrow function que reciba un elemento
-// y devuelva un string formateado para mostrar en pantalla.
-// Debe usar template literals y al menos 2 propiedades del elemento.
-//
-// Ejemplo (Biblioteca):
-// const formatItem = (book) =>
-//   `📚 ${book.name} [${book.category}] — $${book.value}`;
-//
-// Ejemplo (Farmacia):
-// const formatItem = (medicine) =>
-//   `💊 ${medicine.name} — Stock: ${medicine.stock} — $${medicine.price}`;
-
-const formatItem = (product) => {
-  // TODO: Implementar usando template literals
-  // 1. Incluir el nombre del elemento
-  // 2. Incluir la categoría o tipo
-  // 3. Incluir el valor numérico relevante
-`👕 ${product.name} [${product.category}] — ${CURRENCY}${product.value}`; // TODO: Expandir este template
-};
+const formatItem = (product) =>
+  `👕 ${product.name} [${product.category}] — ${CURRENCY}${product.value}`;
 
 // ============================================
 // SECCIÓN 3: Función de cálculo (pura)
 // ============================================
-
-// TODO: Implementa una función pura que calcule algún valor relevante
-// del dominio a partir de parámetros numéricos.
-// Debe ser una función pura: mismo input → siempre mismo output.
-//
-// Ejemplo (Biblioteca): calcular multa por días de retraso
-// const calculateValue = (baseValue, factor) => baseValue * factor;
-//
-// Ejemplo (Farmacia): calcular total de compra con descuento
-// const calculateValue = (price, quantity, discountPct = 0) =>
-//   +(price * quantity * (1 - discountPct / 100)).toFixed(2);
-  // TODO: Implementar el cálculo relevante para tu dominio
 
 // Calcula precio con impuesto
 const calculateValue = (price, taxRate = TAX_RATE) =>
@@ -94,87 +54,53 @@ const calculateValue = (price, taxRate = TAX_RATE) =>
 // SECCIÓN 4: Función de validación
 // ============================================
 
-// TODO: Implementa una función que reciba un elemento y devuelva
-// true o false según una regla del dominio.
-//
-// Ejemplo (Biblioteca): verificar si el libro está disponible
-// const isValid = (book) => book.available === true;
-//
-// Ejemplo (Farmacia): verificar si hay suficiente stock
-// const isValid = (medicine) => medicine.stock > 0;
-//
-// Ejemplo (Gimnasio): verificar si el miembro está activo
-// const isValid = (member) => member.active === true;
-
-// TODO: Implementar la condición de validez de tu dominio
-
 const isValid = (product) => product.active === true;
 
 // ============================================
 // SECCIÓN 5: Función con parámetro por defecto
 // ============================================
 
-// TODO: Implementa una función que use al menos un parámetro
-// por defecto significativo para tu dominio.
-//
-// Ejemplo (Biblioteca): crear un registro con valores por defecto
-// const createRecord = (name, category = "general", available = true) =>
-//   ({ name, category, available });
-//
-// Ejemplo (Farmacia): formatear precio con moneda por defecto
-// const formatPrice = (price, currency = "USD", showTax = false) =>
-//   showTax ? `${currency} ${(price * 1.19).toFixed(2)}` : `${currency} ${price.toFixed(2)}`;
-// TODO: Implementar con parámetros por defecto relevantes al dominio
- 
 const formatWithDefault = (value, label = VALUE_LABEL, currency = CURRENCY) =>
-  `${label}: ${currency}${value}`;  
+  `${label}: ${currency}${value}`;
 
 // ============================================
-// SECCIÓN 6: Reporte usando las funciones
+// SECCIÓN 6: Reporte
 // ============================================
-
-// TODO: Genera un reporte completo usando las funciones anteriores.
-// Debe:
-// 1. Mostrar el título del dominio
-// 2. Recorrer items con for...of y mostrar cada uno con formatItem()
-// 3. Contar los elementos válidos con isValid()
-// 4. Calcular el total o promedio con calculateValue()
-// 5. Mostrar el resumen final con formatWithDefault()
 
 console.log(`\n${"═".repeat(45)}`);
 console.log(`   REPORTE — ${DOMAIN_NAME}`);
 console.log(`${"═".repeat(45)}`);
 
-// TODO: Reemplaza este código de ejemplo con la implementación real
-
 if (items.length === 0) {
-  console.log("\n⚠️  No hay productos disponibles.");
+  console.log("\n⚠️ No hay productos disponibles.");
 } else {
   // --- Listado ---
-  console.log("\n📋 istado de productos:");
+  console.log("\n📋 Listado de productos:");
   let lineNumber = 1;
+
   for (const product of items) {
-    // TODO: Usa formatItem(item) para mostrar cada elemento
     console.log(`  ${lineNumber}. ${formatItem(product)}`);
     lineNumber++;
   }
 
   // --- Validación ---
   let validCount = 0;
+
   for (const product of items) {
-    // TODO: Usa isValid(item) para contar los válidos
     if (isValid(product)) {
       validCount++;
     }
   }
-  console.log(`\n✅ roductos disponibles: ${validCount} / ${items.length}`);
+
+  console.log(`\n✅ Productos disponibles: ${validCount} / ${items.length}`);
 
   // --- Cálculo ---
   let totalValue = 0;
+
   for (const product of items) {
-    // TODO: Usa calculateValue() con las propiedades de tu item
-    totalValue += calculateValue(item.value ?? 0);
+    totalValue += calculateValue(product.value ?? 0);
   }
+
   console.log(formatWithDefault(totalValue, `Total ${VALUE_LABEL} con IVA`));
 }
 
